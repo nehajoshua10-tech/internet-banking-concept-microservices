@@ -1,27 +1,32 @@
 spring:
   application:
-    name: internet-banking-utility-payment-service
+    name: test-service
   datasource:
-    url: jdbc:h2:mem:internet-banking-utility-payment-service
+    url: jdbc:h2:mem:testdb
     username: root
     password: password
     driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
-
   flyway:
     enabled: false
+  cloud:
+    config:
+      enabled: false
+
 server:
   port: 8092
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://localhost:8081/eureka
     enabled: false
 
-info:
-  app:
-    name: ${spring.application.name}
+app:
+  config:
+    keycloak:
+      server-url: http://localhost:8080/auth
+      realm: test-realm
+      clientId: test-client
+      client-secret: test-secret
