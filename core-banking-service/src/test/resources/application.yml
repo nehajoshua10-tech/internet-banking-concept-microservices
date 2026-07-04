@@ -8,18 +8,21 @@ spring:
     driver-class-name: org.h2.Driver
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
 
   flyway:
     enabled: false
+  cloud:
+    config:
+      enabled: false
+
 server:
   port: 8092
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://localhost:8081/eureka
+    enabled: false
 
 info:
   app:

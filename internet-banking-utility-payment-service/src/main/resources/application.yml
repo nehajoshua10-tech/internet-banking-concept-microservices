@@ -1,4 +1,5 @@
 spring:
   application:
     name: internet-banking-utility-payment-service
-
+  config:
+    import: optional:configserver:http://localhost:8090
