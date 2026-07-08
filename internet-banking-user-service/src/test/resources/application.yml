@@ -1,6 +1,11 @@
 spring:
   application:
     name: internet-banking-user-service
+  cloud:
+    config:
+      enabled: false
+  config:
+    import: "optional:configserver:"
   datasource:
     url: jdbc:h2:mem:banking_core_user_service
     username: root
