@@ -1,6 +1,9 @@
 spring:
   application:
     name: internet-banking-utility-payment-service
+  cloud:
+    config:
+      enabled: false
   datasource:
     url: jdbc:h2:mem:internet-banking-utility-payment-service
     username: root
