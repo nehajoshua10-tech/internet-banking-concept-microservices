@@ -1,6 +1,8 @@
 spring:
   application:
     name: banking_core_fund_transfer_service
+  config:
+    import: "optional:configserver:"
   datasource:
     url: jdbc:h2:mem:banking_core_fund_transfer_service
     username: root
